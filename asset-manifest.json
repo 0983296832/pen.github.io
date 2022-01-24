@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/pen.github.io/static/css/main.ad7a7437.chunk.css",
+    "main.js": "/pen.github.io/static/js/main.f3025103.chunk.js",
+    "main.js.map": "/pen.github.io/static/js/main.f3025103.chunk.js.map",
+    "runtime-main.js": "/pen.github.io/static/js/runtime-main.5c560e9d.js",
+    "runtime-main.js.map": "/pen.github.io/static/js/runtime-main.5c560e9d.js.map",
+    "static/js/2.df7a1dee.chunk.js": "/pen.github.io/static/js/2.df7a1dee.chunk.js",
+    "static/js/2.df7a1dee.chunk.js.map": "/pen.github.io/static/js/2.df7a1dee.chunk.js.map",
+    "index.html": "/pen.github.io/index.html",
+    "static/css/main.ad7a7437.chunk.css.map": "/pen.github.io/static/css/main.ad7a7437.chunk.css.map",
+    "static/js/2.df7a1dee.chunk.js.LICENSE.txt": "/pen.github.io/static/js/2.df7a1dee.chunk.js.LICENSE.txt",
+    "static/media/collection1.9209a889.png": "/pen.github.io/static/media/collection1.9209a889.png",
+    "static/media/collection2.36c6990b.png": "/pen.github.io/static/media/collection2.36c6990b.png",
+    "static/media/featured2.ea709a3d.png": "/pen.github.io/static/media/featured2.ea709a3d.png",
+    "static/media/featured3.1f15557f.png": "/pen.github.io/static/media/featured3.1f15557f.png",
+    "static/media/imghome.5b3aeb22.png": "/pen.github.io/static/media/imghome.5b3aeb22.png",
+    "static/media/new1.d6545d1b.png": "/pen.github.io/static/media/new1.d6545d1b.png",
+    "static/media/new2.ed09abc0.png": "/pen.github.io/static/media/new2.ed09abc0.png",
+    "static/media/new3.c2218321.png": "/pen.github.io/static/media/new3.c2218321.png",
+    "static/media/new4.ec6dcd34.png": "/pen.github.io/static/media/new4.ec6dcd34.png",
+    "static/media/new5.418d7e74.png": "/pen.github.io/static/media/new5.418d7e74.png",
+    "static/media/offert.f2a82e43.png": "/pen.github.io/static/media/offert.f2a82e43.png",
+    "static/media/women1.801def00.png": "/pen.github.io/static/media/women1.801def00.png",
+    "static/media/women2.75376521.png": "/pen.github.io/static/media/women2.75376521.png",
+    "static/media/women3.83ad55a0.png": "/pen.github.io/static/media/women3.83ad55a0.png",
+    "static/media/women4.32281ef5.png": "/pen.github.io/static/media/women4.32281ef5.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5c560e9d.js",
+    "static/js/2.df7a1dee.chunk.js",
+    "static/css/main.ad7a7437.chunk.css",
+    "static/js/main.f3025103.chunk.js"
+  ]
+}
