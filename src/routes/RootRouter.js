@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function RootRouter() {
   return (
     <>
-      <Router>
+      <Router basename="/pen.github.io">
         <Menu />
         <Switch>
           <Route exact path="/">
