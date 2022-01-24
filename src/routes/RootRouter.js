@@ -5,7 +5,7 @@ import Productcart from "../pages/ProductCart/Productcart";
 import Cart from "../pages/Cart/Cart";
 import Product from "../pages/Products/Product";
 import PrivateRoute from "./PrivateRoute";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 function RootRouter() {
   return (
     <>
