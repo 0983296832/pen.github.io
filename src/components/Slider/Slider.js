@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
-import { FaQuoteRight } from 'react-icons/fa';
-import { data } from './data'
-import './Slider.css'
+import React, { useState, useEffect } from "react";
+import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+import { FaQuoteRight } from "react-icons/fa";
+import { data } from "../data";
+import "./Slider.css";
 
 function Slider() {
-
-const [people, setPeople] = useState(data.dataPeople);
+  const [people] = useState(data.dataPeople);
   const [index, setIndex] = React.useState(0);
 
   useEffect(() => {
@@ -28,9 +27,8 @@ const [people, setPeople] = useState(data.dataPeople);
     };
   }, [index]);
 
-
-    return (
-        <section className="ssection">
+  return (
+    <section className="ssection">
       <div className="stitle">
         <h2>
           <span>/</span>FEEDBACK
@@ -38,17 +36,23 @@ const [people, setPeople] = useState(data.dataPeople);
       </div>
       <div className="ssection-center">
         {people.map((person, personIndex) => {
-          const { peopleId, peopleImage, peopleName, peopleTitle, peopleQuote } = person;
+          const {
+            peopleId,
+            peopleImage,
+            peopleName,
+            peopleTitle,
+            peopleQuote,
+          } = person;
 
-          let position = 'nextSlide';
+          let position = "nextSlide";
           if (personIndex === index) {
-            position = 'activeSlide';
+            position = "activeSlide";
           }
           if (
             personIndex === index - 1 ||
             (index === 0 && personIndex === people.length - 1)
           ) {
-            position = 'lastSlide';
+            position = "lastSlide";
           }
 
           return (
@@ -69,7 +73,7 @@ const [people, setPeople] = useState(data.dataPeople);
         </button>
       </div>
     </section>
-    )
+  );
 }
 
-export default Slider
+export default Slider;

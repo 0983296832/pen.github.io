@@ -11,19 +11,19 @@
   --font-bold: 700;
   /*===== Colores =====*/
   --dark-color: #141414;
-  --dark-color-light: #8A8A8A;
+  --dark-color-light: #8a8a8a;
   --dark-color-lighten: #f2f2f2;
   --white-color: #fff;
   /*===== Font and typography =====*/
-  --body-font: 'Poppins', san-serif;
+  --body-font: "Poppins", san-serif;
   --big-font-size: 1.25rem;
   --bigger-font-size: 1.5rem;
   --biggest-font-size: 2rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: 0.938rem;
-  --smaller-font-size: .813rem;
+  --smaller-font-size: 0.813rem;
   /*===== Margenes =====*/
-  --mb-1: .5rem;
+  --mb-1: 0.5rem;
   --mb-2: 1rem;
   --mb-3: 1.5rem;
   --mb-4: 2rem;
@@ -41,13 +41,15 @@
     --bigger-font-size: 2rem;
     --biggest-font-size: 3rem;
     --normal-font-size: 1rem;
-    --smaller-font-size: .875rem;
+    --smaller-font-size: 0.875rem;
   }
 }
 
 /*===== BASE =====*/
 
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 
@@ -64,7 +66,11 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, p, ul {
+h1,
+h2,
+h3,
+p,
+ul {
   margin: 0;
 }
 
@@ -95,14 +101,14 @@ img {
   font-size: var(--big-font-size);
   margin-bottom: var(--mb-4);
   text-align: center;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
 }
 
 .section-title::after {
   content: "";
   position: absolute;
   width: 56px;
-  height: .18rem;
+  height: 0.18rem;
   top: -1rem;
   left: 0;
   right: 0;
@@ -139,6 +145,13 @@ img {
   justify-content: space-between;
   align-items: center;
 }
+.avatar {
+  vertical-align: middle;
+  width: 2rem;
+  height: auto;
+  border-radius: 50%;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 768px) {
   .nav__menu {
@@ -149,7 +162,7 @@ img {
     height: 100vh;
     padding: 2rem;
     background-color: var(--white-color);
-    transition: .5s;
+    transition: 0.5s;
   }
 }
 
@@ -161,7 +174,8 @@ img {
   font-weight: var(--font-semi-bold);
 }
 
-.nav__shop, .nav__toggle {
+.nav__shop,
+.nav__toggle {
   font-size: 1.3rem;
   cursor: pointer;
 }
@@ -192,6 +206,60 @@ img {
   font-size: 0.9rem;
 }
 
+.button__login {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  border-radius: 12px;
+  border-width: 0;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 5px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.nav__info {
+  position: relative;
+  cursor: pointer;
+}
+
+.info__details {
+  position: absolute;
+  width: 5rem;
+  height: 2.3rem;
+  background-color: var(--white-color);
+  font-size: 1rem;
+  bottom: -46px;
+  left: -26px;
+  padding: 7px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  line-height: 1.3rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.info__details::before {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  transform: rotate(45deg);
+  top: -4.5px;
+  z-index: 2;
+}
 /*Show menu*/
 
 .show {
@@ -207,7 +275,7 @@ img {
 .active::before {
   content: "";
   position: absolute;
-  bottom: -.5rem;
+  bottom: -0.5rem;
   left: 45%;
   width: 4px;
   height: 4px;
@@ -219,7 +287,7 @@ img {
 
 .scroll-header {
   background-color: var(--white-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /*===== HOME =====*/
@@ -279,12 +347,12 @@ img {
   color: var(--white-color);
   padding: 1.125rem 2rem;
   font-weight: var(--font-medium);
-  border-radius: .5rem;
-  transition: .3s;
+  border-radius: 0.5rem;
+  transition: 0.3s;
 }
 
 .button:hover {
-  transform: translateY(-.25rem);
+  transform: translateY(-0.25rem);
 }
 
 .button-light {
@@ -298,11 +366,11 @@ img {
 .button-icon {
   font-size: 1.25rem;
   margin-left: var(--mb-1);
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .button-light:hover .button-icon {
-  transform: translateX(.25rem);
+  transform: translateX(0.25rem);
 }
 
 /*===== FEATURED =====*/
@@ -322,22 +390,22 @@ img {
   padding: 2rem;
   margin-bottom: var(--mb-3);
   background-color: var(--dark-color-lighten);
-  border-radius: .5rem;
-  transition: .3s;
+  border-radius: 0.5rem;
+  transition: 0.3s;
 }
 
 /* cha absolute con absolute thi se bi xep chong nen nhau */
 
 .sneaker__sale {
   position: absolute;
-  left: .5rem;
+  left: 0.5rem;
   background-color: var(--dark-color);
   color: var(--white-color);
-  padding: .25rem .5rem;
-  border-radius: .25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
   font-size: var(--h2-font-size);
   transform: rotate(-90deg);
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
 }
 
 .sneaker__img {
@@ -345,12 +413,13 @@ img {
   margin-top: var(--mb-3);
   margin-bottom: var(--mb-6);
   transform: var(--rotate-img);
-  filter: drop-shadow(0 12px 8px rgba(0, 0, 0, .2));
+  filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.2));
 }
 
-.sneaker__name, .sneaker__price {
+.sneaker__name,
+.sneaker__price {
   font-size: var(--h2-font-size);
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   font-weight: var(--font-bold);
 }
 
@@ -363,7 +432,7 @@ img {
 }
 
 .sneaker:hover {
-  transform: translateY(-.5rem);
+  transform: translateY(-0.5rem);
 }
 
 .sneaker__pages {
@@ -377,9 +446,9 @@ img {
 }
 
 .sneaker__pages-container a {
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border: 1px solid var(--dark-color);
-  margin: .5rem;
+  margin: 0.5rem;
 }
 
 .sneaker__pages-container a:hover {
@@ -406,8 +475,8 @@ img {
   height: 328px;
   background-color: var(--dark-color-lighten);
   padding: 2rem;
-  border-radius: .5rem;
-  transition: .3s;
+  border-radius: 0.5rem;
+  transition: 0.3s;
 }
 
 .collection__data {
@@ -424,7 +493,7 @@ img {
 
 .collection__name {
   font-size: var(--bigger-font-size);
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
 
 .collection__description {
@@ -432,7 +501,7 @@ img {
 }
 
 .collection__card:hover {
-  transform: translateY(-.5rem);
+  transform: translateY(-0.5rem);
 }
 
 /*===== WOMEN SNEAKERS =====*/
@@ -450,7 +519,7 @@ img {
   grid-template-columns: 55% 45%;
   column-gap: 0;
   background-color: var(--dark-color-lighten);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   justify-content: center;
 }
 
@@ -460,7 +529,7 @@ img {
 
 .offer__title {
   font-size: var(--biggest-font-size);
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
 
 .offer__description {
@@ -482,7 +551,7 @@ img {
   flex-direction: column;
   justify-content: center;
   background-color: var(--dark-color-lighten);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   padding: 2rem;
 }
 
@@ -493,7 +562,7 @@ img {
 
 .new__title {
   font-size: var(--bigger-font-size);
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
 
 .new__price {
@@ -511,7 +580,7 @@ img {
   position: relative;
   padding: 3.5rem 1.5rem;
   background-color: var(--dark-color-lighten);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -531,8 +600,8 @@ img {
   justify-content: center;
   align-items: center;
   /* thẳng hàng  item */
-  background-color: rgba(138, 138, 138, .3);
-  transition: .3s;
+  background-color: rgba(138, 138, 138, 0.3);
+  transition: 0.3s;
 }
 
 .new__sneaker-card:hover .new__sneaker-overlay {
@@ -544,8 +613,8 @@ img {
 .newsletter__container {
   background-color: var(--dark-color);
   color: var(--white-color);
-  padding: 2rem .5rem;
-  border-radius: .5rem;
+  padding: 2rem 0.5rem;
+  border-radius: 0.5rem;
   text-align: center;
 }
 
@@ -560,10 +629,10 @@ img {
 
 .newsletter__susbcribe {
   display: flex;
-  column-gap: .5rem;
+  column-gap: 0.5rem;
   background-color: var(--white-color);
-  padding: .5rem;
-  border-radius: .5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .newsletter__input {

@@ -1,0 +1,112 @@
+import React, { useState, useReducer, useEffect } from "react";
+import { data } from "../components/data";
+import CartReducer from "../reducers/CartReducer";
+import AuthReducer from "../reducers/AuthReducer";
+import { auth } from "../config/firebase";
+import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+
+const AppContext = React.createContext();
+
+const LOCAL_STORAGE_KEY = "CART";
+
+const CartState = {
+  loading: false,
+  total: 0,
+  amount: 0,
+  cartItem: [],
+  productDefault: data.dataProduct,
+};
+
+const UserState = {
+  displayName: "",
+  email: "",
+  photoURL: "",
+};
+
+const AppProvider = ({ children }) => {
+  const [showMenu, setShowMenu] = useState(false);
+  const [state, dispatch] = useReducer(CartReducer, CartState, () => {
+    const localStorageItem = localStorage.getItem(LOCAL_STORAGE_KEY);
+    return localStorageItem ? JSON.parse(localStorageItem) : CartState;
+  });
+  const [stateUser, dispatchFc] = useReducer(AuthReducer, UserState);
+  const [product] = useState(data.dataProduct);
+
+  const addToCart = (prod) => {
+    dispatch({ type: "ADD_TO_CART", payload: prod });
+  };
+
+  const removeItem = (id) => {
+    dispatch({ type: "REMOVE_ITEM", payload: id });
+  };
+
+  const increase = (id) => {
+    dispatch({ type: "INCREASE", payload: id });
+  };
+
+  const decrease = (id) => {
+    dispatch({ type: "DECREASE", payload: id });
+  };
+
+  const clearCart = () => {
+    dispatch({ type: "CLEAR" });
+  };
+  useEffect(() => {
+    dispatch({ type: "GET_TOTALS" });
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(state));
+  }, [state.cartItem]);
+
+  useEffect(() => {
+    console.log(localStorage);
+    const localStorageItem = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (localStorageItem) {
+      const cartItem = JSON.parse(localStorageItem);
+      dispatch({ type: "GET_CART", payload: cartItem });
+    }
+  }, []);
+
+  const signInWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        dispatchFc({ type: "LOG_IN", payload: result.user });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const signOutWithGoogle = () => {
+    signOut(auth)
+      .then(() => {
+        window.alert("Sign out successfully");
+        dispatchFc({ type: "LOG_OUT" });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  return (
+    <AppContext.Provider
+      value={{
+        showMenu,
+        setShowMenu,
+        ...state,
+        addToCart,
+        product,
+        removeItem,
+        increase,
+        decrease,
+        clearCart,
+        ...stateUser,
+        signInWithGoogle,
+        signOutWithGoogle,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
+};
+
+export { AppContext, AppProvider };
